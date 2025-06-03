@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN mvn clean package -DskiptTests #ejecuto el build
+RUN mvn clean package -DskipTests #ejecuto el build
 
 #creacion de la imagen
 FROM openjdk:17-jdk-alpine
@@ -14,4 +14,4 @@ COPY --from=build /app/target/ecommerce-0.0.1-SNAPSHOT.jar /app/ecommerce-0.0.1-
 
 EXPOSE 8081
 
-ENTRYPOINT ["java","-jar"," /app/ecommerce-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/app/ecommerce-0.0.1-SNAPSHOT.jar"]
