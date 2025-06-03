@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN mvn crean package -DskiptTests
+RUN mvn clean package -DskiptTests
 
 #creacion de la imagen
 FROM openjdk:17-jdk-alpine
